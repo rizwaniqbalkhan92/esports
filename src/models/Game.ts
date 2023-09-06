@@ -1,7 +1,8 @@
-import { Schema, model } from "mongoose"
+import { STATES, Schema, model } from "mongoose"
 
 export interface Game{
     address:string,
+    name:string,
     date:Date,
     time:string,
     numOfPeople:number
@@ -16,6 +17,10 @@ const GameSchema=new Schema<Game>({
         required:true
     }
     ,
+    name:{
+        type:String,
+        required:true
+    },
     date:{
         type:Date,
         required:true
